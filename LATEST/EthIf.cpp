@@ -2,6 +2,6 @@
 
 class_EthIf EthIf;
 
-void class_EthIf::InitFunction(void){
+FUNC(void, ETHIF_CODE) class_EthIf::InitFunction(void){
 }
 
