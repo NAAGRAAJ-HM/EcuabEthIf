@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "EthIf.h"
 
+#include "EthIf_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -32,11 +34,13 @@
 /* OBJECTS                                           */
 /*****************************************************/
 class_EthIf EthIf;
+class_EthIf_EcuM EthIf_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_EthIf = &EthIf_EcuM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, ETHIF_CODE) class_EthIf::InitFunction(void){
+FUNC(void, ETHIF_CODE) class_EthIf_EcuM::InitFunction(void){
 }
 
 FUNC(void, ETHIF_CODE) class_EthIf::GetControllerMode(void){

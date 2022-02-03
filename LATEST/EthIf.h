@@ -26,7 +26,6 @@ class class_EthIf{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, ETHIF_CODE) InitFunction                        (void);
       FUNC(void, ETHIF_CODE) GetControllerMode                   (void);
       FUNC(void, ETHIF_CODE) SetControllerMode                   (void);
       FUNC(void, ETHIF_CODE) GetTransceiverWakeupMode            (void);
