@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : EthIf_EcuM.h                             */
+/* File   : EthIf_SchM.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -9,7 +9,7 @@
 /*****************************************************/
 #include "Compiler_Cfg_EthIf.h"
 
-#include "EcuM_Client.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +22,15 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_EthIf_EcuM : public interface_EcuM_Client{
+class interface_EthIf_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, ETHIF_CODE) InitFunction   (void);
-      FUNC(void, ETHIF_CODE) DeInitFunction (void);
+      FUNC(void, ETHIF_CODE) MainFunction      (void);
+      FUNC(void, ETHIF_CODE) MainFunctionRx    (void);
+      FUNC(void, ETHIF_CODE) MainFunctionTx    (void);
+      FUNC(void, ETHIF_CODE) MainFunctionState (void);
 };
 
 /*****************************************************/
@@ -42,7 +44,7 @@ class interface_EthIf_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_EthIf_EcuM *EcuM_Client_ptr_EthIf;
+extern interface_EthIf_SchM *SchM_Client_ptr_EthIf;
 
 /*****************************************************/
 /* EOF                                               */

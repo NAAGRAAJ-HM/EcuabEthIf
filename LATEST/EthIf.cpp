@@ -6,9 +6,10 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "EthIf.h"
-
+#include "module.h"
 #include "EthIf_EcuM.h"
+#include "EthIf_SchM.h"
+#include "EthIf_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,19 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_EthIf:
+      public abstract_module
+   ,  public interface_EthIf_EcuM
+   ,  public interface_EthIf_SchM
+{
+   public:
+      FUNC(void, ETHIF_CODE) InitFunction      (void);
+      FUNC(void, ETHIF_CODE) DeInitFunction    (void);
+      FUNC(void, ETHIF_CODE) MainFunction      (void);
+      FUNC(void, ETHIF_CODE) MainFunctionRx    (void);
+      FUNC(void, ETHIF_CODE) MainFunctionTx    (void);
+      FUNC(void, ETHIF_CODE) MainFunctionState (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,263 +47,270 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_EthIf EthIf;
-class_EthIf_EcuM EthIf_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_EthIf = &EthIf_EcuM;
+module_EthIf EthIf;
+
+interface_EthIf_EcuM *EcuM_Client_ptr_EthIf = &EthIf;
+interface_EthIf_SchM *SchM_Client_ptr_EthIf = &EthIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, ETHIF_CODE) class_EthIf_EcuM::InitFunction(void){
+FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetControllerMode(void){
+FUNC(void, ETHIF_CODE) module_EthIf::DeInitFunction(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetControllerMode(void){
+FUNC(void, ETHIF_CODE) module_EthIf::MainFunction(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetTransceiverWakeupMode(void){
+FUNC(void, ETHIF_CODE) module_EthIf::MainFunctionRx(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetTransceiverWakeupMode(void){
+FUNC(void, ETHIF_CODE) module_EthIf::MainFunctionTx(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::CheckWakeup(void){
+FUNC(void, ETHIF_CODE) module_EthIf::MainFunctionState(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetPhysAddr(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetControllerMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetPhysAddr(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetControllerMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::UpdatePhysAddrFilter(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetTransceiverWakeupMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetPortMacAddr(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetTransceiverWakeupMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetArlTable(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::CheckWakeup(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetCtrlIdxList(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetPhysAddr(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetVlanId(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetPhysAddr(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetAndResetMeasurementData(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::UpdatePhysAddrFilter(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::StoreConfiguration(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetPortMacAddr(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::ResetConfiguration(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetArlTable(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetCurrentTime(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetCtrlIdxList(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::EnableEgressTimeStamp(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetVlanId(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetEgressTimeStamp(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetAndResetMeasurementData(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetIngressTimeStamp(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::StoreConfiguration(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchPortGroupRequestMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::ResetConfiguration(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::StartAllPorts(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetCurrentTime(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetSwitchMgmtInfo(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::EnableEgressTimeStamp(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetRxMgmtObject(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetEgressTimeStamp(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetTxMgmtObject(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetIngressTimeStamp(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchEnableTimeStamping(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchPortGroupRequestMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::VerifyConfig(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::StartAllPorts(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetForwardingMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetSwitchMgmtInfo(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetTrcvSignalQuality(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetRxMgmtObject(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetSwitchPortSignalQuality(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetTxMgmtObject(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::ClearTrcvSignalQuality(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchEnableTimeStamping(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::ClearSwitchPortSignalQuality(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::VerifyConfig(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetPhyTestMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetForwardingMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetPhyLoopbackMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetTrcvSignalQuality(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetPhyTxMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetSwitchPortSignalQuality(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetCableDiagnosticsResult(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::ClearTrcvSignalQuality(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetPhyIdentifier(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::ClearSwitchPortSignalQuality(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetBufWRxParams(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetPhyTestMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetBufWTxParams(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetPhyLoopbackMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetBufWTxParams(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetPhyTxMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetRadioParams(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetCableDiagnosticsResult(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetChanRxParams(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetPhyIdentifier(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetChanTxParams(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetBufWRxParams(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetChanRxParams(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetBufWTxParams(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::ProvideTxBuffer(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetBufWTxParams(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::Transmit(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetRadioParams(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetVersionInfo(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetChanRxParams(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetSwitchPortMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetChanTxParams(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetTransceiverMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetChanRxParams(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchPortGetLinkState(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::ProvideTxBuffer(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::TransceiverGetLinkState(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::Transmit(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchPortGetBaudRate(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetVersionInfo(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::TransceiverGetBaudRate(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetSwitchPortMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchPortGetDuplxMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetTransceiverMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::TransceiverGetDuplexMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchPortGetLinkState(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchPortGetCounterValues(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::TransceiverGetLinkState(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchPortGetRxStatus(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchPortGetBaudRate(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchPortGetTxStatus(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::TransceiverGetBaudRate(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchPortGetTxErrorCounterValues(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchPortGetDuplxMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchPortGetMacLearningMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::TransceiverGetDuplexMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetSwitchPortIdentifier(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchPortGetCounterValues(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetSwitchIdentifier(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchPortGetRxStatus(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::ReadPortMirrorConfiguration(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchPortGetTxStatus(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::WritePortMirrorConfiguration(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchPortGetTxErrorCounterValues(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::DeletePortMirrorConfiguration(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchPortGetMacLearningMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetPortMirrorState(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetSwitchPortIdentifier(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetPortMirrorState(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetSwitchIdentifier(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetPortTestMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::ReadPortMirrorConfiguration(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetPortLoopbackMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::WritePortMirrorConfiguration(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SetPortTxMode(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::DeletePortMirrorConfiguration(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::GetPortCableDiagnosticsResult(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetPortMirrorState(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::RunPortCableDiagnostic(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetPortMirrorState(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::RunCableDiagnostic(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetPortTestMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchGetCfgDataRaw(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetPortLoopbackMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchGetCfgDataInfo(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SetPortTxMode(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::SwitchPortGetMaxFIFOBufferFillLevel(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetPortCableDiagnosticsResult(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::CbRxIndication(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::RunPortCableDiagnostic(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::CbTxConfirmation(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::RunCableDiagnostic(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::CbCtrlModeIndication(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchGetCfgDataRaw(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::CbTrcvModeIndication(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchGetCfgDataInfo(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::CbSwitchPortModeIndication(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::SwitchPortGetMaxFIFOBufferFillLevel(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::MainFunctionRx(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::CbRxIndication(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::MainFunctionTx(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::CbTxConfirmation(void){
 }
 
-FUNC(void, ETHIF_CODE) class_EthIf::MainFunctionState(void){
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::CbCtrlModeIndication(void){
+}
+
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::CbTrcvModeIndication(void){
+}
+
+FUNC(void, ETHIF_CODE) class_EthIf_Unused::CbSwitchPortModeIndication(void){
 }
 
 /*****************************************************/

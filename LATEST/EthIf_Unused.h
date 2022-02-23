@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : EthIf.h                                  */
+/* File   : EthIf_Unused.h                           */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -21,7 +21,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_EthIf{
+class class_EthIf_Unused{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -106,9 +106,6 @@ class class_EthIf{
       FUNC(void, ETHIF_CODE) CbCtrlModeIndication                (void);
       FUNC(void, ETHIF_CODE) CbTrcvModeIndication                (void);
       FUNC(void, ETHIF_CODE) CbSwitchPortModeIndication          (void);
-      FUNC(void, ETHIF_CODE) MainFunctionRx                      (void);
-      FUNC(void, ETHIF_CODE) MainFunctionTx                      (void);
-      FUNC(void, ETHIF_CODE) MainFunctionState                   (void);
 };
 
 /*****************************************************/
@@ -122,7 +119,7 @@ class class_EthIf{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_EthIf EthIf;
+//extern class_EthIf EthIf;
 
 /*****************************************************/
 /* EOF                                               */
