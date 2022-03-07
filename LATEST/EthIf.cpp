@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_EthIf:
       public abstract_module
-   ,  public interface_EthIf_EcuM
-   ,  public interface_EthIf_SchM
 {
    public:
       FUNC(void, ETHIF_CODE) InitFunction      (void);
@@ -47,10 +45,9 @@ class module_EthIf:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_EthIf EthIf;
-
-interface_EthIf_EcuM *EcuM_Client_ptr_EthIf = &EthIf;
-interface_EthIf_SchM *SchM_Client_ptr_EthIf = &EthIf;
+module_EthIf   EthIf;
+infEcuMClient* gptrinfEcuMClient_EthIf = &EthIf;
+infSchMClient* gptrinfSchMClient_EthIf = &EthIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

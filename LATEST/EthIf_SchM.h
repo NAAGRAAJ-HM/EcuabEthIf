@@ -9,8 +9,6 @@
 /*****************************************************/
 #include "Compiler_Cfg_EthIf.h"
 
-#include "SchM_Client.h"
-
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -22,12 +20,11 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_EthIf_SchM : public interface_SchM_Client{
+class interface_EthIf_SchM{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, ETHIF_CODE) MainFunction      (void);
       FUNC(void, ETHIF_CODE) MainFunctionRx    (void);
       FUNC(void, ETHIF_CODE) MainFunctionTx    (void);
       FUNC(void, ETHIF_CODE) MainFunctionState (void);
