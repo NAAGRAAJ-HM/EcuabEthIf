@@ -41,7 +41,7 @@ class interface_EthIf_SchM{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_EthIf_SchM *SchM_Client_ptr_EthIf;
+extern infSchMClient *gptrinfSchMClient_EthIf;
 
 /*****************************************************/
 /* EOF                                               */
