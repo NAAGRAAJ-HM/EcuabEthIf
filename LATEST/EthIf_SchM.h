@@ -20,7 +20,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_EthIf_SchM{
+class infEthIf_SchM{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -41,7 +41,8 @@ class interface_EthIf_SchM{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient *gptrinfSchMClient_EthIf;
+extern infSchMClient* gptrinfSchMClient_EthIf;
+extern infEthIf_SchM* gptrinfEthIf_SchM;
 
 /*****************************************************/
 /* EOF                                               */
