@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "EthIf_EcuM.h"
-#include "EthIf_SchM.h"
+#include "infEthIf_EcuM.h"
+#include "infEthIf_SchM.h"
 #include "EthIf_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_EthIf:
    public:
       FUNC(void, ETHIF_CODE) InitFunction      (void);
       FUNC(void, ETHIF_CODE) DeInitFunction    (void);
+      FUNC(void, ETHIF_CODE) GetVersionInfo    (void);
       FUNC(void, ETHIF_CODE) MainFunction      (void);
       FUNC(void, ETHIF_CODE) MainFunctionRx    (void);
       FUNC(void, ETHIF_CODE) MainFunctionTx    (void);
@@ -47,6 +48,7 @@ class module_EthIf:
 /*****************************************************/
 module_EthIf   EthIf;
 infEcuMClient* gptrinfEcuMClient_EthIf = &EthIf;
+infDcmClient*  gptrinfDcmClient_EthIf  = &EthIf;
 infSchMClient* gptrinfSchMClient_EthIf = &EthIf;
 
 /*****************************************************/
@@ -56,6 +58,9 @@ FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(void){
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::DeInitFunction(void){
+}
+
+FUNC(void, ETHIF_CODE) module_EthIf::GetVersionInfo(void){
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::MainFunction(void){
