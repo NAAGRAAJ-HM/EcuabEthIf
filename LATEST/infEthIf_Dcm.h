@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : EthIf_EcuM.h                             */
+/* File   : infEthIf_Dcm.h                           */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infEcuMClient* gptrinfEcuMClient_EthIf;
+extern infDcmClient* gptrinfDcmClient_EthIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

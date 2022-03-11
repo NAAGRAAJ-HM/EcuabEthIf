@@ -8,8 +8,8 @@
 /*****************************************************/
 #include "module.h"
 #include "infEthIf_EcuM.h"
+#include "infEthIf_Dcm.h"
 #include "infEthIf_SchM.h"
-#include "EthIf_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -74,6 +74,8 @@ FUNC(void, ETHIF_CODE) module_EthIf::MainFunctionTx(void){
 
 FUNC(void, ETHIF_CODE) module_EthIf::MainFunctionState(void){
 }
+
+#include "EthIf_Unused.h"
 
 FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetControllerMode(void){
 }
@@ -208,9 +210,6 @@ FUNC(void, ETHIF_CODE) class_EthIf_Unused::ProvideTxBuffer(void){
 }
 
 FUNC(void, ETHIF_CODE) class_EthIf_Unused::Transmit(void){
-}
-
-FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetVersionInfo(void){
 }
 
 FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetSwitchPortMode(void){

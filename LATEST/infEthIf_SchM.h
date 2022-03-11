@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : EthIf_SchM.h                             */
+/* File   : infEthIf_SchM.h                          */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -25,9 +25,9 @@ class infEthIf_SchM{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, ETHIF_CODE) MainFunctionRx    (void);
-      FUNC(void, ETHIF_CODE) MainFunctionTx    (void);
-      FUNC(void, ETHIF_CODE) MainFunctionState (void);
+      virtual FUNC(void, ETHIF_CODE) MainFunctionRx    (void);
+      virtual FUNC(void, ETHIF_CODE) MainFunctionTx    (void);
+      virtual FUNC(void, ETHIF_CODE) MainFunctionState (void);
 };
 
 /*****************************************************/
