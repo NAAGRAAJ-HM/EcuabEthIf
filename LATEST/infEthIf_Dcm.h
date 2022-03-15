@@ -32,7 +32,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern infDcmClient* gptrinfDcmClient_EthIf;
+extern CONSTP2VAR(infDcmClient, ETHIF_VAR, ETHIF_CONST) gptrinfDcmClient_EthIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
