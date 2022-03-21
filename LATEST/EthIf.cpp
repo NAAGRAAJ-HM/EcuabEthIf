@@ -6,9 +6,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infEthIf_Version.h"
-
 #include "module.h"
+#include "infEthIf_Version.h"
 #include "infEthIf_EcuM.h"
 #include "infEthIf_Dcm.h"
 #include "infEthIf_SchM.h"
@@ -48,31 +47,20 @@ class module_EthIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-
-/******************************************************************************/
-/* EOF                                                                        */
-/******************************************************************************/
-
-
-/*****************************************************/
-/* OBJECTS                                           */
-/*****************************************************/
 VAR(module_EthIf, ETHIF_VAR) EthIf;
 CONSTP2VAR(infEcuMClient, ETHIF_VAR, ETHIF_CONST) gptrinfEcuMClient_EthIf = &EthIf;
 CONSTP2VAR(infDcmClient,  ETHIF_VAR, ETHIF_CONST) gptrinfDcmClient_EthIf  = &EthIf;
 CONSTP2VAR(infSchMClient, ETHIF_VAR, ETHIF_CONST) gptrinfSchMClient_EthIf = &EthIf;
 
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(void){
+   EthIf.IsInitDone = E_OK;
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::DeInitFunction(void){
+   EthIf.IsInitDone = E_NOT_OK;
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::GetVersionInfo(void){
@@ -329,7 +317,7 @@ FUNC(void, ETHIF_CODE) class_EthIf_Unused::CbTrcvModeIndication(void){
 FUNC(void, ETHIF_CODE) class_EthIf_Unused::CbSwitchPortModeIndication(void){
 }
 
-/*****************************************************/
-/* EOF                                               */
-/*****************************************************/
+/******************************************************************************/
+/* EOF                                                                        */
+/******************************************************************************/
 
