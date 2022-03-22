@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infEthIf_Version.h"
+#include "EthIf_Cfg.h"
 #include "infEthIf_EcuM.h"
 #include "infEthIf_Dcm.h"
 #include "infEthIf_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define ETHIF_AR_RELEASE_MAJOR_VERSION                                         4
+#define ETHIF_AR_RELEASE_MINOR_VERSION                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(ETHIF_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible ETHIF_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(ETHIF_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible ETHIF_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -64,6 +73,11 @@ FUNC(void, ETHIF_CODE) module_EthIf::DeInitFunction(void){
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::GetVersionInfo(void){
+#if(STD_ON == EthIf_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::MainFunction(void){
