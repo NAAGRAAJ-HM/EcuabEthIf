@@ -43,6 +43,16 @@ class module_EthIf:
       FUNC(void, ETHIF_CODE) MainFunctionRx    (void);
       FUNC(void, ETHIF_CODE) MainFunctionTx    (void);
       FUNC(void, ETHIF_CODE) MainFunctionState (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, ETHIF_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
