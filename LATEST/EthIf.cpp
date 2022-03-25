@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgEthIf.h"
-#include "infEthIf_EcuM.h"
-#include "infEthIf_Dcm.h"
-#include "infEthIf_SchM.h"
+#include "module.hpp"
+#include "CfgEthIf.hpp"
+#include "infEthIf_EcuM.hpp"
+#include "infEthIf_Dcm.hpp"
+#include "infEthIf_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -102,7 +102,7 @@ FUNC(void, ETHIF_CODE) module_EthIf::MainFunctionTx(void){
 FUNC(void, ETHIF_CODE) module_EthIf::MainFunctionState(void){
 }
 
-#include "EthIf_Unused.h"
+#include "EthIf_Unused.hpp"
 
 FUNC(void, ETHIF_CODE) class_EthIf_Unused::GetControllerMode(void){
 }
