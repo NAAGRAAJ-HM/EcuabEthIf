@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : infEthIf_SchM.h                                                   */
+/* File   : infEthIf_SchM.hpp                                                 */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "Compiler_Cfg_EthIf.h"
+#include "CompilerCfg_EthIf.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -33,6 +33,8 @@ class infEthIf_SchM{
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+extern CONSTP2VAR(infSchMClient, ETHIF_VAR, ETHIF_CONST) gptrinfSchMClient_EthIf;
+extern CONSTP2VAR(infEthIf_SchM, ETHIF_VAR, ETHIF_CONST) gptrinfEthIf_SchM;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
@@ -41,8 +43,6 @@ class infEthIf_SchM{
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern CONSTP2VAR(infSchMClient, ETHIF_VAR, ETHIF_CONST) gptrinfSchMClient_EthIf;
-extern CONSTP2VAR(infEthIf_SchM, ETHIF_VAR, ETHIF_CONST) gptrinfEthIf_SchM;
 
 /******************************************************************************/
 /* EOF                                                                        */
