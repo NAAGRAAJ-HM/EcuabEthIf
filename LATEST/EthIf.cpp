@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgEthIf.hpp"
 #include "infEthIf_EcuM.hpp"
 #include "infEthIf_Dcm.hpp"
 #include "infEthIf_SchM.hpp"
@@ -36,40 +35,44 @@ class module_EthIf:
       public abstract_module
 {
    public:
+      module_EthIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, ETHIF_CODE) InitFunction      (void);
       FUNC(void, ETHIF_CODE) DeInitFunction    (void);
-      FUNC(void, ETHIF_CODE) GetVersionInfo    (void);
       FUNC(void, ETHIF_CODE) MainFunction      (void);
+
       FUNC(void, ETHIF_CODE) MainFunctionRx    (void);
       FUNC(void, ETHIF_CODE) MainFunctionTx    (void);
       FUNC(void, ETHIF_CODE) MainFunctionState (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, ETHIF_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_EthIf, ETHIF_VAR) EthIf;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, ETHIF_VAR, ETHIF_CONST) gptrinfEcuMClient_EthIf = &EthIf;
+CONSTP2VAR(infDcmClient,  ETHIF_VAR, ETHIF_CONST) gptrinfDcmClient_EthIf  = &EthIf;
+CONSTP2VAR(infSchMClient, ETHIF_VAR, ETHIF_CONST) gptrinfSchMClient_EthIf = &EthIf;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgEthIf.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_EthIf, ETHIF_VAR) EthIf;
-CONSTP2VAR(infEcuMClient, ETHIF_VAR, ETHIF_CONST) gptrinfEcuMClient_EthIf = &EthIf;
-CONSTP2VAR(infDcmClient,  ETHIF_VAR, ETHIF_CONST) gptrinfDcmClient_EthIf  = &EthIf;
-CONSTP2VAR(infSchMClient, ETHIF_VAR, ETHIF_CONST) gptrinfSchMClient_EthIf = &EthIf;
+VAR(module_EthIf, ETHIF_VAR) EthIf(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -80,14 +83,6 @@ FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(void){
 
 FUNC(void, ETHIF_CODE) module_EthIf::DeInitFunction(void){
    EthIf.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, ETHIF_CODE) module_EthIf::GetVersionInfo(void){
-#if(STD_ON == EthIf_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::MainFunction(void){
