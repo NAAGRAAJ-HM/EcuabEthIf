@@ -82,6 +82,7 @@ VAR(module_EthIf, ETHIF_VAR) EthIf(
 FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, ETHIF_CONFIG_DATA, ETHIF_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == EthIf_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == EthIf_DevErrorDetect)
       Det_ReportError(
@@ -89,6 +90,7 @@ FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == EthIf_DevErrorDetect)
          Det_ReportError(
@@ -100,10 +102,13 @@ FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(
 // use PBcfg_EthIf as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == EthIf_InitCheck)
    }
+#endif
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::DeInitFunction(void){
+#if(STD_ON == EthIf_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == EthIf_DevErrorDetect)
       Det_ReportError(
@@ -111,11 +116,26 @@ FUNC(void, ETHIF_CODE) module_EthIf::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == EthIf_InitCheck)
    }
+#endif
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::MainFunction(void){
+#if(STD_ON == EthIf_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == EthIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == EthIf_InitCheck)
+   }
+#endif
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::MainFunctionRx(void){
