@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ETHIF_AR_RELEASE_MAJOR_VERSION                                         4
-#define ETHIF_AR_RELEASE_MINOR_VERSION                                         3
+#define ETHIF_AR_RELEASE_VERSION_MAJOR                                         4
+#define ETHIF_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(ETHIF_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible ETHIF_AR_RELEASE_MAJOR_VERSION!"
+#if(ETHIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible ETHIF_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(ETHIF_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible ETHIF_AR_RELEASE_MINOR_VERSION!"
+#if(ETHIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible ETHIF_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -67,8 +67,10 @@ CONSTP2VAR(infSchMClient, ETHIF_VAR, ETHIF_CONST) gptrinfSchMClient_EthIf = &Eth
 /******************************************************************************/
 VAR(module_EthIf, ETHIF_VAR) EthIf(
    {
-         0x0000
-      ,  0xFFFF
+         ETHIF_AR_RELEASE_VERSION_MAJOR
+      ,  ETHIF_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
