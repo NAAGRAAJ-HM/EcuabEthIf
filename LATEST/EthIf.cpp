@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "EthIf_core.hpp"
 #include "infEthIf_EcuM.hpp"
 #include "infEthIf_Dcm.hpp"
 #include "infEthIf_SchM.hpp"
@@ -31,38 +32,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-      FUNC(void, ETHIF_CODE) SwitchPortGetBaudRate               (void);
-      FUNC(void, ETHIF_CODE) TransceiverGetBaudRate              (void);
-      FUNC(void, ETHIF_CODE) SwitchPortGetDuplxMode              (void);
-      FUNC(void, ETHIF_CODE) TransceiverGetDuplexMode            (void);
-      FUNC(void, ETHIF_CODE) SwitchPortGetCounterValues          (void);
-      FUNC(void, ETHIF_CODE) SwitchPortGetRxStatus               (void);
-      FUNC(void, ETHIF_CODE) SwitchPortGetTxStatus               (void);
-      FUNC(void, ETHIF_CODE) SwitchPortGetTxErrorCounterValues   (void);
-      FUNC(void, ETHIF_CODE) SwitchPortGetMacLearningMode        (void);
-      FUNC(void, ETHIF_CODE) GetSwitchPortIdentifier             (void);
-      FUNC(void, ETHIF_CODE) GetSwitchIdentifier                 (void);
-      FUNC(void, ETHIF_CODE) ReadPortMirrorConfiguration         (void);
-      FUNC(void, ETHIF_CODE) WritePortMirrorConfiguration        (void);
-      FUNC(void, ETHIF_CODE) DeletePortMirrorConfiguration       (void);
-      FUNC(void, ETHIF_CODE) GetPortMirrorState                  (void);
-      FUNC(void, ETHIF_CODE) SetPortMirrorState                  (void);
-      FUNC(void, ETHIF_CODE) SetPortTestMode                     (void);
-      FUNC(void, ETHIF_CODE) SetPortLoopbackMode                 (void);
-      FUNC(void, ETHIF_CODE) SetPortTxMode                       (void);
-      FUNC(void, ETHIF_CODE) GetPortCableDiagnosticsResult       (void);
-      FUNC(void, ETHIF_CODE) RunPortCableDiagnostic              (void);
-      FUNC(void, ETHIF_CODE) RunCableDiagnostic                  (void);
-      FUNC(void, ETHIF_CODE) SwitchGetCfgDataRaw                 (void);
-      FUNC(void, ETHIF_CODE) SwitchGetCfgDataInfo                (void);
-      FUNC(void, ETHIF_CODE) SwitchPortGetMaxFIFOBufferFillLevel (void);
-      FUNC(void, ETHIF_CODE) CbRxIndication                      (void);
-      FUNC(void, ETHIF_CODE) CbTxConfirmation                    (void);
-      FUNC(void, ETHIF_CODE) CbCtrlModeIndication                (void);
-      FUNC(void, ETHIF_CODE) CbTrcvModeIndication                (void);
-      FUNC(void, ETHIF_CODE) CbSwitchPortModeIndication          (void);
-};
-
 class module_EthIf:
       public abstract_module
    ,  public class_EthIf_Functionality
