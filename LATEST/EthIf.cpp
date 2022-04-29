@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgEthIf.hpp"
 #include "EthIf_core.hpp"
-#include "infEthIf_EcuM.hpp"
-#include "infEthIf_Dcm.hpp"
-#include "infEthIf_SchM.hpp"
+#include "infEthIf.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_EthIf:
       );
       FUNC(void, ETHIF_CODE) DeInitFunction    (void);
       FUNC(void, ETHIF_CODE) MainFunction      (void);
+      ETHIF_CORE_FUNCTIONALITIES
 
       FUNC(void, ETHIF_CODE) MainFunctionRx    (void);
       FUNC(void, ETHIF_CODE) MainFunctionTx    (void);
@@ -62,7 +62,6 @@ CONSTP2VAR(infSchMClient, ETHIF_VAR, ETHIF_CONST) gptrinfSchMClient_EthIf = &Eth
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgEthIf.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */

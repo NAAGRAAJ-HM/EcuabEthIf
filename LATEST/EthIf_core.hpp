@@ -12,7 +12,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ETHIF_COREFUNCTIONALITIES                                              \
+#define ETHIF_CORE_FUNCTIONALITIES                                             \
               FUNC(void, ETHIF_CODE) GetControllerMode                   (void);     \
               FUNC(void, ETHIF_CODE) SetControllerMode                   (void);     \
               FUNC(void, ETHIF_CODE) GetTransceiverWakeupMode            (void);     \
@@ -93,7 +93,7 @@
               FUNC(void, ETHIF_CODE) CbTrcvModeIndication                (void);     \
               FUNC(void, ETHIF_CODE) CbSwitchPortModeIndication          (void);     \
 
-#define ETHIF_COREFUNCTIONALITIES_VIRTUAL                                      \
+#define ETHIF_CORE_FUNCTIONALITIES_VIRTUAL                                     \
       virtual FUNC(void, ETHIF_CODE) GetControllerMode                   (void) = 0; \
       virtual FUNC(void, ETHIF_CODE) SetControllerMode                   (void) = 0; \
       virtual FUNC(void, ETHIF_CODE) GetTransceiverWakeupMode            (void) = 0; \
@@ -183,7 +183,7 @@
 /******************************************************************************/
 class class_EthIf_Functionality{
    public:
-      ETHIF_COREFUNCTIONALITIES_VIRTUAL
+      ETHIF_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
