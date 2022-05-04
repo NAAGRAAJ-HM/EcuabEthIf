@@ -117,7 +117,7 @@ FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  ETHIF_E_UNINIT
       );
 #endif
    }
@@ -137,7 +137,7 @@ FUNC(void, ETHIF_CODE) module_EthIf::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  ETHIF_E_UNINIT
       );
 #endif
    }
@@ -156,7 +156,7 @@ FUNC(void, ETHIF_CODE) module_EthIf::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  ETHIF_E_UNINIT
       );
 #endif
    }
