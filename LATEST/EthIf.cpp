@@ -93,7 +93,10 @@ FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, ETHIF_CONFIG_DATA, ETHIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == EthIf_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -131,7 +134,10 @@ FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(
 
 FUNC(void, ETHIF_CODE) module_EthIf::DeInitFunction(void){
 #if(STD_ON == EthIf_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == EthIf_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -151,7 +157,10 @@ FUNC(void, ETHIF_CODE) module_EthIf::DeInitFunction(void){
 
 FUNC(void, ETHIF_CODE) module_EthIf::MainFunction(void){
 #if(STD_ON == EthIf_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == EthIf_InitCheck)
    }
