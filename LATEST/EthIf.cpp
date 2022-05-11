@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgEthIf.hpp"
 #include "EthIf_core.hpp"
-#include "infEthIf.hpp"
+#include "infEthIf_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_EthIf:
+   INTERFACES_EXPORTED_ETHIF
       public abstract_module
    ,  public class_EthIf_Functionality
 {
