@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_EthIf:
-   INTERFACES_EXPORTED_ETHIF
+      INTERFACES_EXPORTED_ETHIF
       public abstract_module
    ,  public class_EthIf_Functionality
 {
