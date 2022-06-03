@@ -10,6 +10,7 @@
 #include "CfgEthIf.hpp"
 #include "EthIf_core.hpp"
 #include "infEthIf_Exp.hpp"
+#include "infEthIf_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -42,6 +43,7 @@ class module_EthIf:
 /******************************************************************************/
             Std_TypeReturn          IsInitDone{E_NOT_OK};
       const CfgModule_TypeAbstract* lptrCfg{(CfgModule_TypeAbstract*)NULL_PTR};
+            infPduRClient_Lo        infPduRClient_EthIf;
 
    public:
       module_EthIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
