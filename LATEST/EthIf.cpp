@@ -79,7 +79,7 @@ CONSTP2VAR(infSchMClient, ETHIF_VAR, ETHIF_CONST) gptrinfSchMClient_EthIf = &Eth
 VAR(module_EthIf, ETHIF_VAR) EthIf(
    {
 #if(STD_ON == _ReSIM)
-// char strModuleName[6];
+   char strModuleName[6] = "ETHIF";
 #else
 #endif
          ETHIF_AR_RELEASE_VERSION_MAJOR
