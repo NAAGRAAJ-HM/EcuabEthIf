@@ -87,8 +87,8 @@
               FUNC(void, ETHIF_CODE) SwitchGetCfgDataRaw                 (void);     \
               FUNC(void, ETHIF_CODE) SwitchGetCfgDataInfo                (void);     \
               FUNC(void, ETHIF_CODE) SwitchPortGetMaxFIFOBufferFillLevel (void);     \
-              FUNC(void, ETHIF_CODE) CbRxIndication                      (void);     \
-              FUNC(void, ETHIF_CODE) CbTxConfirmation                    (void);     \
+              FUNC(void, ETHIF_CODE) RxIndication                        (void);     \
+              FUNC(void, ETHIF_CODE) TxConfirmation                      (void);     \
               FUNC(void, ETHIF_CODE) CbCtrlModeIndication                (void);     \
               FUNC(void, ETHIF_CODE) CbTrcvModeIndication                (void);     \
               FUNC(void, ETHIF_CODE) CbSwitchPortModeIndication          (void);     \
@@ -168,8 +168,8 @@
       virtual FUNC(void, ETHIF_CODE) SwitchGetCfgDataRaw                 (void) = 0; \
       virtual FUNC(void, ETHIF_CODE) SwitchGetCfgDataInfo                (void) = 0; \
       virtual FUNC(void, ETHIF_CODE) SwitchPortGetMaxFIFOBufferFillLevel (void) = 0; \
-      virtual FUNC(void, ETHIF_CODE) CbRxIndication                      (void) = 0; \
-      virtual FUNC(void, ETHIF_CODE) CbTxConfirmation                    (void) = 0; \
+      virtual FUNC(void, ETHIF_CODE) RxIndication                        (void) = 0; \
+      virtual FUNC(void, ETHIF_CODE) TxConfirmation                      (void) = 0; \
       virtual FUNC(void, ETHIF_CODE) CbCtrlModeIndication                (void) = 0; \
       virtual FUNC(void, ETHIF_CODE) CbTrcvModeIndication                (void) = 0; \
       virtual FUNC(void, ETHIF_CODE) CbSwitchPortModeIndication          (void) = 0; \

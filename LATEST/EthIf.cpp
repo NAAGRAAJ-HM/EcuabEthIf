@@ -411,10 +411,10 @@ FUNC(void, ETHIF_CODE) module_EthIf::SwitchGetCfgDataInfo(void){
 FUNC(void, ETHIF_CODE) module_EthIf::SwitchPortGetMaxFIFOBufferFillLevel(void){
 }
 
-FUNC(void, ETHIF_CODE) module_EthIf::CbRxIndication(void){
+FUNC(void, ETHIF_CODE) module_EthIf::RxIndication(void){
 }
 
-FUNC(void, ETHIF_CODE) module_EthIf::CbTxConfirmation(void){
+FUNC(void, ETHIF_CODE) module_EthIf::TxConfirmation(void){
 }
 
 FUNC(void, ETHIF_CODE) module_EthIf::CbCtrlModeIndication(void){
