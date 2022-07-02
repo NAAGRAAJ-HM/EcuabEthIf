@@ -87,12 +87,7 @@ FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgEthIf;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == EthIf_DevErrorDetect)
