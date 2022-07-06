@@ -11,6 +11,7 @@
 #include "infEthIf_Dcm.hpp"
 #include "infEthIf_Det.hpp"
 #include "infEthIf_SchM.hpp"
+#include "infPduRClient_Lo.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
