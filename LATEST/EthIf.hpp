@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstEthIf.hpp"
 #include "CfgEthIf.hpp"
 #include "EthIf_core.hpp"
 #include "infEthIf_Exp.hpp"
@@ -31,6 +32,7 @@ class module_EthIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstEthIf_Type* lptrConst = (ConstEthIf_Type*)NULL_PTR;
       infPduRClient_Lo infPduRClient_EthIf;
 
    public:
@@ -38,7 +40,8 @@ class module_EthIf:
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, ETHIF_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, ETHIF_CONFIG_DATA, ETHIF_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, ETHIF_CONST,       ETHIF_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ETHIF_CONFIG_DATA, ETHIF_APPL_CONST) lptrCfgModule
       );
       FUNC(void, ETHIF_CODE) DeInitFunction    (void);
       FUNC(void, ETHIF_CODE) MainFunction      (void);
