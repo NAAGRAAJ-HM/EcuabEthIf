@@ -61,7 +61,7 @@ FUNC(void, ETHIF_CODE) module_EthIf::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstEthIf_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
