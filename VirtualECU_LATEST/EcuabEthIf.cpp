@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ETHIF_AR_RELEASE_VERSION_MAJOR                                         4
-#define ETHIF_AR_RELEASE_VERSION_MINOR                                         3
+#define ECUABETHIF_AR_RELEASE_VERSION_MAJOR                                         4
+#define ECUABETHIF_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(ETHIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible ETHIF_AR_RELEASE_VERSION_MAJOR!"
+#if(ECUABETHIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible ECUABETHIF_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(ETHIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible ETHIF_AR_RELEASE_VERSION_MINOR!"
+#if(ECUABETHIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible ECUABETHIF_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_EcuabEthIf, ETHIF_VAR) EcuabEthIf;
+VAR(module_EcuabEthIf, ECUABETHIF_VAR) EcuabEthIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, ETHIF_CONST,       ETHIF_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   ETHIF_CONFIG_DATA, ETHIF_APPL_CONST) lptrCfgModule
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, ECUABETHIF_CONST,       ECUABETHIF_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABETHIF_CONFIG_DATA, ECUABETHIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == EcuabEthIf_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, ETHIF_CODE) module_EcuabEthIf::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ETHIF_E_UNINIT
+         ,  ECUABETHIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::DeInitFunction(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::DeInitFunction(
    void
 ){
 #if(STD_ON == EcuabEthIf_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, ETHIF_CODE) module_EcuabEthIf::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ETHIF_E_UNINIT
+         ,  ECUABETHIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::MainFunction(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::MainFunction(
    void
 ){
 #if(STD_ON == EcuabEthIf_InitCheck)
@@ -132,419 +132,419 @@ FUNC(void, ETHIF_CODE) module_EcuabEthIf::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ETHIF_E_UNINIT
+         ,  ECUABETHIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::MainFunctionRx(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::MainFunctionRx(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::MainFunctionTx(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::MainFunctionTx(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::MainFunctionState(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::MainFunctionState(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetControllerMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetControllerMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetControllerMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetControllerMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetTransceiverWakeupMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetTransceiverWakeupMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetTransceiverWakeupMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetTransceiverWakeupMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::CheckWakeup(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::CheckWakeup(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetPhysAddr(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetPhysAddr(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetPhysAddr(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetPhysAddr(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::UpdatePhysAddrFilter(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::UpdatePhysAddrFilter(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetMcalPortMacAddr(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetMcalPortMacAddr(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetArlTable(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetArlTable(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetCtrlIdxList(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetCtrlIdxList(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetVlanId(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetVlanId(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetAndResetMeasurementData(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetAndResetMeasurementData(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::StoreConfiguration(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::StoreConfiguration(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::ResetConfiguration(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::ResetConfiguration(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetCurrentTime(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetCurrentTime(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::EnableEgressTimeStamp(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::EnableEgressTimeStamp(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetEgressTimeStamp(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetEgressTimeStamp(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetIngressTimeStamp(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetIngressTimeStamp(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGroupRequestMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGroupRequestMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::StartAllMcalPorts(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::StartAllMcalPorts(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetSwitchMgmtInfo(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetSwitchMgmtInfo(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetRxMgmtObject(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetRxMgmtObject(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetTxMgmtObject(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetTxMgmtObject(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchEnableTimeStamping(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchEnableTimeStamping(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::VerifyConfig(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::VerifyConfig(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetForwardingMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetForwardingMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetTrcvSignalQuality(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetTrcvSignalQuality(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetSwitchMcalPortSignalQuality(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetSwitchMcalPortSignalQuality(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::ClearTrcvSignalQuality(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::ClearTrcvSignalQuality(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::ClearSwitchMcalPortSignalQuality(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::ClearSwitchMcalPortSignalQuality(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetPhyTestMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetPhyTestMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetPhyLoopbackMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetPhyLoopbackMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetPhyTxMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetPhyTxMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetCableDiagnosticsResult(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetCableDiagnosticsResult(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetPhyIdentifier(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetPhyIdentifier(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetBufWRxParams(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetBufWRxParams(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetBufWTxParams(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetBufWTxParams(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetBufWTxParams(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetBufWTxParams(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetRadioParams(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetRadioParams(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetChanRxParams(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetChanRxParams(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetChanTxParams(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetChanTxParams(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetChanRxParams(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetChanRxParams(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::ProvideTxBuffer(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::ProvideTxBuffer(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::Transmit(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::Transmit(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetSwitchMcalPortMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetSwitchMcalPortMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetTransceiverMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetTransceiverMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetMcalLinkState(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetMcalLinkState(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::TransceiverGetMcalLinkState(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::TransceiverGetMcalLinkState(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetBaudRate(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetBaudRate(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::TransceiverGetBaudRate(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::TransceiverGetBaudRate(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetDuplxMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetDuplxMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::TransceiverGetDuplexMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::TransceiverGetDuplexMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetCounterValues(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetCounterValues(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetRxStatus(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetRxStatus(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetTxStatus(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetTxStatus(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetTxErrorCounterValues(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetTxErrorCounterValues(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetMacLearningMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetMacLearningMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetSwitchMcalPortIdentifier(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetSwitchMcalPortIdentifier(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetSwitchIdentifier(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetSwitchIdentifier(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::ReadMcalPortMirrorConfiguration(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::ReadMcalPortMirrorConfiguration(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::WriteMcalPortMirrorConfiguration(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::WriteMcalPortMirrorConfiguration(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::DeleteMcalPortMirrorConfiguration(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::DeleteMcalPortMirrorConfiguration(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetMcalPortMirrorState(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetMcalPortMirrorState(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetMcalPortMirrorState(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetMcalPortMirrorState(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetMcalPortTestMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetMcalPortTestMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetMcalPortLoopbackMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetMcalPortLoopbackMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SetMcalPortTxMode(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SetMcalPortTxMode(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::GetMcalPortCableDiagnosticsResult(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::GetMcalPortCableDiagnosticsResult(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::RunMcalPortCableDiagnostic(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::RunMcalPortCableDiagnostic(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::RunCableDiagnostic(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::RunCableDiagnostic(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchGetCfgDataRaw(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchGetCfgDataRaw(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchGetCfgDataInfo(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchGetCfgDataInfo(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetMaxFIFOBufferFillLevel(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::SwitchMcalPortGetMaxFIFOBufferFillLevel(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::RxIndication(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::RxIndication(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::TxConfirmation(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::TxConfirmation(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::CbCtrlModeIndication(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::CbCtrlModeIndication(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::CbTrcvModeIndication(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::CbTrcvModeIndication(
    void
 ){
 }
 
-FUNC(void, ETHIF_CODE) module_EcuabEthIf::CbSwitchMcalPortModeIndication(
+FUNC(void, ECUABETHIF_CODE) module_EcuabEthIf::CbSwitchMcalPortModeIndication(
    void
 ){
 }

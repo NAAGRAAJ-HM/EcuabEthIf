@@ -1,16 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : EcuabEthIf.hpp                                                         */
+/* File   : infEcuabEthIf_ServiceDet.hpp                                                  */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstEcuabEthIf.hpp"
-#include "CfgEcuabEthIf.hpp"
-#include "EcuabEthIf_core.hpp"
-#include "infEcuabEthIf_Exp.hpp"
+#include "CompilerCfg_EcuabEthIf.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -23,34 +20,9 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_EcuabEthIf:
-      INTERFACES_EXMCALPORTED_ECUABETHIF
-      public abstract_module
-   ,  public class_EcuabEthIf_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-      const ConstEcuabEthIf_Type* lptrConst = (ConstEcuabEthIf_Type*)NULL_PTR;
-      infServicePduRClient_Lo infServicePduRClient_EcuabEthIf;
-
-   public:
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-      FUNC(void, ECUABETHIF_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, ECUABETHIF_CONST,       ECUABETHIF_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABETHIF_CONFIG_DATA, ECUABETHIF_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, ECUABETHIF_CODE) DeInitFunction    (void);
-      FUNC(void, ECUABETHIF_CODE) MainFunction      (void);
-      ECUABETHIF_CORE_FUNCTIONALITIES
-
-      FUNC(void, ECUABETHIF_CODE) MainFunctionRx    (void);
-      FUNC(void, ECUABETHIF_CODE) MainFunctionTx    (void);
-      FUNC(void, ECUABETHIF_CODE) MainFunctionState (void);
-};
+typedef enum{
+      ETHIF_E_UNINIT
+}EcuabEthIf_TypeServiceDetErrorCode;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -63,7 +35,10 @@ class module_EcuabEthIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_EcuabEthIf, ECUABETHIF_VAR) EcuabEthIf;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 
 /******************************************************************************/
 /* EOF                                                                        */

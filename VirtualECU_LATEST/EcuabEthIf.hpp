@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_EcuabEthIf:
-      INTERFACES_EXPORTED_ETHIF
+      INTERFACES_EXPORTED_ECUABETHIF
       public abstract_module
    ,  public class_EcuabEthIf_Functionality
 {
@@ -39,17 +39,17 @@ class module_EcuabEthIf:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, ETHIF_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, ETHIF_CONST,       ETHIF_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ETHIF_CONFIG_DATA, ETHIF_APPL_CONST) lptrCfgModule
+      FUNC(void, ECUABETHIF_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, ECUABETHIF_CONST,       ECUABETHIF_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABETHIF_CONFIG_DATA, ECUABETHIF_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, ETHIF_CODE) DeInitFunction    (void);
-      FUNC(void, ETHIF_CODE) MainFunction      (void);
-      ETHIF_CORE_FUNCTIONALITIES
+      FUNC(void, ECUABETHIF_CODE) DeInitFunction    (void);
+      FUNC(void, ECUABETHIF_CODE) MainFunction      (void);
+      ECUABETHIF_CORE_FUNCTIONALITIES
 
-      FUNC(void, ETHIF_CODE) MainFunctionRx    (void);
-      FUNC(void, ETHIF_CODE) MainFunctionTx    (void);
-      FUNC(void, ETHIF_CODE) MainFunctionState (void);
+      FUNC(void, ECUABETHIF_CODE) MainFunctionRx    (void);
+      FUNC(void, ECUABETHIF_CODE) MainFunctionTx    (void);
+      FUNC(void, ECUABETHIF_CODE) MainFunctionState (void);
 };
 
 /******************************************************************************/
@@ -63,7 +63,7 @@ class module_EcuabEthIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_EcuabEthIf, ETHIF_VAR) EcuabEthIf;
+extern VAR(module_EcuabEthIf, ECUABETHIF_VAR) EcuabEthIf;
 
 /******************************************************************************/
 /* EOF                                                                        */
