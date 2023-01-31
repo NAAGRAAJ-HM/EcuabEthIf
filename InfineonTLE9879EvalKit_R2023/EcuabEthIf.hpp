@@ -32,7 +32,7 @@ class module_EcuabEthIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-      const ConstEcuabEthIf_Type* lptrConst = (ConstEcuabEthIf_Type*)NULL_PTR;
+      const ConstModule_TypeAbstract* lptrNvMBlocksRom = (ConstModule_TypeAbstract*)NULL_PTR;
       infServicePduRClient_Lo infServicePduRClient_EcuabEthIf;
 
    public:
@@ -40,7 +40,7 @@ class module_EcuabEthIf:
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, ECUABETHIF_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, ECUABETHIF_CONST,       ECUABETHIF_APPL_CONST) lptrConstModule
+            CONSTP2CONST(ConstModule_TypeAbstract, ECUABETHIF_CONST,       ECUABETHIF_APPL_CONST) lptrNvMBlocksRomModule
          ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABETHIF_CONFIG_DATA, ECUABETHIF_APPL_CONST) lptrCfgModule
       );
       FUNC(void, ECUABETHIF_CODE) DeInitFunction    (void);
